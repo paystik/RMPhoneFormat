@@ -644,8 +644,10 @@ static NSMutableDictionary *flagRules = nil;
 
 - (id)initWithDefaultCountry:(NSString *)countryCode {
     if ((self = [super init])) {
-        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        _data = [NSData dataWithContentsOfFile:[bundle pathForResource:@"PhoneFormats" ofType:@"dat"]];
+        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"RMPhoneFormat" withExtension:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+        NSURL *url = [bundle URLForResource:@"PhoneFormats" withExtension:@"dat"];
+        _data = [NSData dataWithContentsOfURL:url];
         NSAssert(_data, @"The file PhoneFormats.dat is not in the resource bundle. See the README.");
 
         if (countryCode.length) {
