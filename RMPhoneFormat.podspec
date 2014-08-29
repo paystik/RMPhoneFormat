@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name         = 'RMPhoneFormat'
   spec.version      = '1.0.0'
-  spec.homepage     = 'https://github.com/henrinormak/RMPhoneFormat'
+  spec.homepage     = 'https://github.com/paystik/RMPhoneFormat'
   spec.authors      = { 'Rick Maddy' => '' }
   spec.summary      = 'RMPhoneFormat provides a simple to use class for formatting and validating phone numbers in iOS apps. The formatting should replicate what you would see in the Contacts app for the same phone number.'
   spec.source       = { :git => 'https://github.com/paystik/RMPhoneFormat.git', :tag => spec.version }
